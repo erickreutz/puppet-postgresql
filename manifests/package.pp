@@ -16,7 +16,10 @@ class postgresql::package(
   }
 
   package { $package:
-    ensure => $package_ensure
+    ensure => $package_ensure,
+    install_options => [
+      '--no-tcl',
+    ],
   }
 
 }
